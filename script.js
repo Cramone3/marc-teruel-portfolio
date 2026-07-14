@@ -33,3 +33,31 @@ const observer = new IntersectionObserver(
 );
 
 revealTargets.forEach((el) => observer.observe(el));
+
+const siteHeader = document.querySelector(".site-header");
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (e) => {
+    const targetId = link.getAttribute("href").slice(1);
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    e.preventDefault();
+
+    const headerHeight = siteHeader.offsetHeight;
+    const viewportHeight = window.innerHeight;
+    const availableHeight = viewportHeight - headerHeight;
+    const rect = target.getBoundingClientRect();
+    const sectionHeight = rect.height;
+
+    let scrollTarget;
+    if (sectionHeight <= availableHeight) {
+      scrollTarget =
+        window.scrollY + rect.top - headerHeight - (availableHeight - sectionHeight) / 2;
+    } else {
+      scrollTarget = window.scrollY + rect.top - headerHeight - 16;
+    }
+
+    window.scrollTo({ top: Math.max(scrollTarget, 0), behavior: "smooth" });
+  });
+});
