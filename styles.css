@@ -335,6 +335,11 @@ a { color: inherit; text-decoration: none; }
   max-width: 65ch;
 }
 
+.cta-note {
+  font-size: 13px;
+  color: rgba(244, 241, 232, 0.55);
+}
+
 /* Work grid */
 .work-grid {
   margin-top: 40px;
