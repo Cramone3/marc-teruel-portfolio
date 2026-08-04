@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate — J.D. Davison Legacy Foundation</title>
+<meta name="description" content="Fund free basketball camps, scholarships, and mentorship for youth in Lowndes County, Alabama. Every gift goes directly to the program.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0f172a">
+<link rel="canonical" href="https://gohighlevel.marc.mkteruel.com/donation-foundation/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Donate — J.D. Davison Legacy Foundation">
+<meta property="og:description" content="Fund free basketball camps, scholarships, and mentorship for youth in Lowndes County, Alabama. Every gift goes directly to the program.">
+<meta property="og:url" content="https://gohighlevel.marc.mkteruel.com/donation-foundation/">
+<meta property="og:site_name" content="J.D. Davison Legacy Foundation">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Donate — J.D. Davison Legacy Foundation">
+<meta name="twitter:description" content="Fund free basketball camps, scholarships, and mentorship for youth in Lowndes County, Alabama. Every gift goes directly to the program.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DonateAction",
+  "name": "J.D. Davison Legacy Foundation Donation",
+  "description": "Fund free basketball camps, scholarships, and mentorship for youth in Lowndes County, Alabama.",
+  "url": "https://gohighlevel.marc.mkteruel.com/donation-foundation/"
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#" class="logo">
+      <img src="assets/favicon.svg" alt="" width="30" height="30">
+      <span>J.D. Davison<em>Legacy Foundation</em></span>
+    </a>
+    <a href="#donate" class="btn btn-primary btn-sm">Secure Donation</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero hero-center">
+    <div class="wrap hero-center-inner">
+      <p class="eyebrow eyebrow-light eyebrow-center">Make a Difference Today</p>
+      <h1>ONE KID MADE IT.<span>HELP THE NEXT ONE GET THERE.</span></h1>
+      <p class="hero-sub hero-sub-center">Every dollar you give funds free basketball camps, scholarships, and mentorship for youth across Lowndes, Butler, and Montgomery County &mdash; some of the most under-resourced communities in Alabama.</p>
+      <a href="#donate" class="btn btn-primary">Donate Now</a>
+    </div>
+  </section>
+
+  <section id="donate" class="section section-dark">
+    <div class="wrap">
+      <p class="eyebrow eyebrow-light" style="text-align:center;display:block;">Complete Your Gift</p>
+      <h2 class="h2-light" style="text-align:center;">Your Donation Details</h2>
+      <p class="lead" style="margin:0 auto 8px;text-align:center;opacity:0.75;">Secure checkout powered by Stripe. You'll receive a tax receipt immediately after your gift is processed.</p>
+
+      <form class="app-form donate-form" id="donation-form">
+        <h3>Billing Information</h3>
+        <div class="field-row">
+          <label>
+            <span>First Name *</span>
+            <input type="text" name="first_name" placeholder="Enter your first name" required>
+          </label>
+          <label>
+            <span>Last Name *</span>
+            <input type="text" name="last_name" placeholder="Enter your last name" required>
+          </label>
+        </div>
+        <div class="field-row">
+          <label>
+            <span>Phone *</span>
+            <input type="tel" name="phone" placeholder="Enter your phone number" required>
+          </label>
+          <label>
+            <span>Email *</span>
+            <input type="email" name="email" placeholder="your@email.com" required>
+          </label>
+        </div>
+
+        <p class="field-group-label">Address</p>
+        <label>
+          <span>Street Address *</span>
+          <input type="text" name="address" placeholder="Enter your full address" required>
+        </label>
+        <div class="field-row">
+          <label>
+            <span>City *</span>
+            <input type="text" name="city" placeholder="Enter your city" required>
+          </label>
+          <label>
+            <span>State *</span>
+            <input type="text" name="state" placeholder="Enter your state" required>
+          </label>
+        </div>
+        <div class="field-row">
+          <label>
+            <span>Country *</span>
+            <input type="text" name="country" value="United States" required>
+          </label>
+          <label>
+            <span>Postal Code *</span>
+            <input type="text" name="postal_code" placeholder="ZIP or postal code" required>
+          </label>
+        </div>
+
+        <h3>Giving Preferences</h3>
+        <p class="field-group-label">Donation Amount *</p>
+        <div class="amount-grid" role="radiogroup">
+          <button type="button" class="amount-pill" data-amount="25">$ 25</button>
+          <button type="button" class="amount-pill" data-amount="50">$ 50</button>
+          <button type="button" class="amount-pill" data-amount="100">$ 100</button>
+          <button type="button" class="amount-pill" data-amount="250">$ 250</button>
+          <button type="button" class="amount-pill" data-amount="500">$ 500</button>
+          <button type="button" class="amount-pill" data-amount="1000">$ 1000</button>
+          <button type="button" class="amount-pill amount-pill-other" data-amount="other">Other amount</button>
+        </div>
+        <input type="hidden" name="donation_amount" id="donation_amount" required>
+
+        <label>
+          <span>Billing Frequency</span>
+          <select name="billing_frequency">
+            <option value="once">Once</option>
+            <option value="monthly">Monthly</option>
+          </select>
+        </label>
+
+        <div class="payment-block">
+          <span class="test-mode-badge">DEMO &mdash; NOT LIVE</span>
+          <div class="field-row">
+            <label>
+              <span>Card Number</span>
+              <input type="text" placeholder="1234 1234 1234 1234" disabled>
+            </label>
+          </div>
+          <div class="field-row">
+            <label>
+              <span>Expiration</span>
+              <input type="text" placeholder="MM / YY" disabled>
+            </label>
+            <label>
+              <span>CVC</span>
+              <input type="text" placeholder="CVC" disabled>
+            </label>
+          </div>
+          <p class="secure-note">*100% secure &amp; safe payments*</p>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Complete Donation &rarr;</button>
+        <p class="form-privacy">This is a portfolio recreation &mdash; payment fields are disabled and no charge is ever made.</p>
+      </form>
+
+      <div class="thank-you" id="thank-you" hidden>
+        <h2 class="h2-light">THANK YOU.</h2>
+        <p>Your generosity funds real opportunities for kids in Lowndes County. Wire this form up to Stripe and your CRM to start processing real gifts.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="wrap">
+      <p class="eyebrow">Your Impact</p>
+      <h2>Where Your Money <span>Goes</span></h2>
+      <p class="lead lead-accent">Every dollar directly serves youth in Lowndes, Butler, and Montgomery County. Here's what your gift makes possible.</p>
+      <div class="impact-grid">
+        <div class="impact-card">
+          <p class="impact-amount">$25</p>
+          <h3>Equipment &amp; Gear</h3>
+          <p>Covers shoes, shorts, and training gear for one participant for a full camp season.</p>
+        </div>
+        <div class="impact-card">
+          <p class="impact-amount">$50</p>
+          <h3>Camp Day Operations</h3>
+          <p>Funds a full camp day &mdash; staffing, food, facility use, and materials for every participant.</p>
+        </div>
+        <div class="impact-card">
+          <p class="impact-amount">$100</p>
+          <h3>Mentorship Month</h3>
+          <p>Supports one month of one-on-one mentorship sessions and program coordination.</p>
+        </div>
+        <div class="impact-card">
+          <p class="impact-amount">$250</p>
+          <h3>Scholarship Fund</h3>
+          <p>Feeds directly into the scholarship pool that opens college doors for deserving youth.</p>
+        </div>
+        <div class="impact-card">
+          <p class="impact-amount">$500</p>
+          <h3>Program Sponsorship</h3>
+          <p>Sponsors an entire community event &mdash; logistics, promotion, and participant support.</p>
+        </div>
+        <div class="impact-card">
+          <p class="impact-amount">$1K+</p>
+          <h3>Legacy Donor</h3>
+          <p>Joins the Legacy Circle &mdash; named recognition, an annual impact report, and direct access to foundation leadership.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-cta">
+    <div class="wrap cta-grid">
+      <div class="cta-block">
+        <h2>VOLUNTEER</h2>
+        <p>Join our community of volunteers and help create meaningful change. Share your time, skills, and passion to make an impact.</p>
+        <a href="https://gohighlevel.marc.mkteruel.com/volunteer-foundation/" class="btn btn-outline-dark">Become a Volunteer</a>
+      </div>
+      <div class="cta-block cta-block-right">
+        <h2>FREE<span>PROGRAM</span></h2>
+        <p>Everyone deserves access to support and growth opportunities. Explore our free programs and start your journey today.</p>
+        <a href="https://gohighlevel.marc.mkteruel.com/registration-foundation/" class="btn btn-outline-dark">Join Our Free Program</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-logo">THE J.D. <em>DAVISON</em> LEGACY FOUNDATION</p>
+    <p class="footer-tagline">Empowering youth in Lowndes, Butler, Montgomery County and surrounding areas, through basketball, mentorship, and community.</p>
+    <span>&copy; <span id="year"></span> J.D. Davison Legacy Foundation &mdash; portfolio recreation by Marc Teruel.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
