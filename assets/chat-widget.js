@@ -6,7 +6,7 @@
   const sendBtn = document.getElementById('chat-send');
 
   const WEBHOOK_URL = 'https://n8n.mkteruel.com/webhook/portfolio-chat-bot';
-  const WEBHOOK_SECRET = 'cd6f57143bae8647eada8f7ea05756633c5742522297fbd1cf6d4887307a87a6';
+  const WEBHOOK_SECRET = 'dc48b7e19945984dac05054ce6d48c6db7564e662adc04c5e3ef3b9842079da2';
 
   toggle.onclick = () => {
     box.style.display = box.style.display === 'none' ? 'flex' : 'none';
@@ -41,7 +41,7 @@
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'X-Webhook-Secret': WEBHOOK_SECRET
+          'X-Webhook-Secret': dc48b7e19945984dac05054ce6d48c6db7564e662adc04c5e3ef3b9842079da2
         },
         body: JSON.stringify({ message: text, sessionId: getSessionId() })
       });
