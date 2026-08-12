@@ -41,7 +41,7 @@
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'X-Webhook-Secret': dc48b7e19945984dac05054ce6d48c6db7564e662adc04c5e3ef3b9842079da2
+          'X-Webhook-Secret': WEBHOOK_SECRET
         },
         body: JSON.stringify({ message: text, sessionId: getSessionId() })
       });
