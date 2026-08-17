@@ -61,3 +61,30 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     window.scrollTo({ top: Math.max(scrollTarget, 0), behavior: "smooth" });
   });
 });
+
+// Automation workflow modal
+(function () {
+  const openBtn = document.getElementById("automation-modal-open");
+  const closeBtn = document.getElementById("automation-modal-close");
+  const modal = document.getElementById("automation-modal");
+  if (!openBtn || !modal) return;
+
+  function openModal() {
+    modal.hidden = false;
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+  }
+
+  openBtn.addEventListener("click", openModal);
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !modal.hidden) closeModal();
+  });
+})();

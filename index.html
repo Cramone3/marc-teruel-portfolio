@@ -227,28 +227,10 @@
     <div class="tools-category">
       <h3 class="tools-subhead">Automation</h3>
       <div class="work-grid">
-        <div class="work-card work-card-wide work-card-static">
+        <button type="button" class="work-card work-card-trigger" id="automation-modal-open">
           <span class="work-tag">Workflow</span>
           <h3>Appointment Confirmation + Reminder</h3>
-          <p>GoHighLevel automation that confirms a booked discovery call, then sends timed reminders leading up to it.</p>
-          <div class="wf-chain">
-            <div class="wf-node wf-trigger">Booked<br>Appointment</div>
-            <div class="wf-arrow"></div>
-            <div class="wf-node">Confirmation<br>Email</div>
-            <div class="wf-arrow"></div>
-            <div class="wf-node">Wait<br>24h</div>
-            <div class="wf-arrow"></div>
-            <div class="wf-node">Reminder<br>Email</div>
-            <div class="wf-arrow"></div>
-            <div class="wf-node">Wait<br>1h</div>
-            <div class="wf-arrow"></div>
-            <div class="wf-node">Reminder<br>Email</div>
-            <div class="wf-arrow"></div>
-            <div class="wf-node">Wait<br>5m</div>
-            <div class="wf-arrow"></div>
-            <div class="wf-node">Final<br>Reminder</div>
-          </div>
-        </div>
+        </button>
       </div>
     </div>
 
@@ -310,6 +292,32 @@
   </section>
 
 </main>
+
+<div class="modal-overlay" id="automation-modal" hidden>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="automation-modal-title">
+    <button type="button" class="modal-close" id="automation-modal-close" aria-label="Close">&times;</button>
+    <span class="work-tag">Sample Automation</span>
+    <h3 id="automation-modal-title">Appointment Confirmation + Reminder</h3>
+    <p>GoHighLevel automation that confirms a booked discovery call, then sends timed reminders leading up to it.</p>
+    <div class="wf-chain">
+      <div class="wf-node wf-trigger">Booked<br>Appointment</div>
+      <div class="wf-arrow"></div>
+      <div class="wf-node">Confirmation<br>Email</div>
+      <div class="wf-arrow"></div>
+      <div class="wf-node">Wait<br>24h</div>
+      <div class="wf-arrow"></div>
+      <div class="wf-node">Reminder<br>Email</div>
+      <div class="wf-arrow"></div>
+      <div class="wf-node">Wait<br>1h</div>
+      <div class="wf-arrow"></div>
+      <div class="wf-node">Reminder<br>Email</div>
+      <div class="wf-arrow"></div>
+      <div class="wf-node">Wait<br>5m</div>
+      <div class="wf-arrow"></div>
+      <div class="wf-node">Final<br>Reminder</div>
+    </div>
+  </div>
+</div>
 
 <footer class="site-footer">
   <div class="wrap footer-inner">
