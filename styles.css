@@ -474,6 +474,25 @@ a { color: inherit; text-decoration: none; }
   cursor: pointer;
 }
 
+/* Automation cards: titles vary a lot in length, so balance the grid
+   with a smaller, consistent title size and a shared minimum height */
+.work-grid-automation .work-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 108px;
+}
+
+.work-grid-automation .work-card h3 {
+  font-size: 15px;
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+
+.work-grid-automation .work-card p {
+  font-size: 13px;
+}
+
 /* Automation workflow modal */
 .modal-overlay {
   position: fixed;
