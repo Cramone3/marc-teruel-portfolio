@@ -70,6 +70,7 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   const titleEl = document.getElementById("automation-modal-title");
   const descEl = document.getElementById("automation-modal-desc");
   const chainEl = document.getElementById("automation-modal-chain");
+  const branchesEl = document.getElementById("automation-modal-branches");
   if (!triggers.length || !modal) return;
 
   const workflows = {
@@ -96,6 +97,46 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
         { label: "Tag: apollo<br>inbound", type: "action" },
       ],
     },
+    "lead-source": {
+      title: "Lead Source",
+      desc: "GoHighLevel automation that routes a submitted lead into a nurture sequence based on how they found us.",
+      steps: [
+        { label: "Form<br>Submitted", type: "trigger" },
+        { label: "Add Tag:<br>new-lead", type: "action" },
+        { label: "Pipeline Stage:<br>New Lead", type: "action" },
+        { label: "Wait<br>30s", type: "action" },
+        { label: "Condition:<br>Lead Source?", type: "action" },
+      ],
+      branches: [
+        {
+          label: "If Social Media",
+          steps: [
+            { label: "Add Tag:<br>social-media-lead", type: "action" },
+            { label: "Email:<br>Welcome", type: "action" },
+            { label: "Wait<br>30 days", type: "action" },
+            { label: "Remove Tag:<br>new-lead", type: "action" },
+          ],
+        },
+        {
+          label: "If Website",
+          steps: [
+            { label: "Add Tag:<br>website-lead", type: "action" },
+            { label: "Email:<br>Popular Links", type: "action" },
+            { label: "Wait<br>30 days", type: "action" },
+            { label: "Remove Tag:<br>new-lead", type: "action" },
+          ],
+        },
+        {
+          label: "If Referral",
+          steps: [
+            { label: "Add Tag:<br>referral-lead", type: "action" },
+            { label: "Email:<br>Thank You", type: "action" },
+            { label: "Wait<br>30 days", type: "action" },
+            { label: "Remove Tag:<br>new-lead", type: "action" },
+          ],
+        },
+      ],
+    },
   };
 
   function buildChainMarkup(steps) {
@@ -107,12 +148,23 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
       .join("");
   }
 
+  function buildBranchesMarkup(branches) {
+    if (!branches || !branches.length) return "";
+    return branches
+      .map(
+        (branch) =>
+          `<p class="wf-branch-label">${branch.label}</p><div class="wf-chain">${buildChainMarkup(branch.steps)}</div>`
+      )
+      .join("");
+  }
+
   function openModal(key) {
     const workflow = workflows[key];
     if (!workflow) return;
     titleEl.textContent = workflow.title;
     descEl.textContent = workflow.desc;
     chainEl.innerHTML = buildChainMarkup(workflow.steps);
+    branchesEl.innerHTML = buildBranchesMarkup(workflow.branches);
     modal.hidden = false;
   }
 

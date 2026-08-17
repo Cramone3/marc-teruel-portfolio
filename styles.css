@@ -322,6 +322,16 @@ a { color: inherit; text-decoration: none; }
   border-left-color: var(--border);
 }
 
+.wf-branch-label {
+  margin-top: 18px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--orange-dark);
+}
+
 .wf-chain {
   display: flex;
   align-items: center;
