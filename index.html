@@ -227,9 +227,13 @@
     <div class="tools-category">
       <h3 class="tools-subhead">Automation</h3>
       <div class="work-grid">
-        <button type="button" class="work-card work-card-trigger" id="automation-modal-open">
+        <button type="button" class="work-card work-card-trigger" data-workflow="appointment-reminder">
           <span class="work-tag">Workflow</span>
           <h3>Appointment Confirmation + Reminder</h3>
+        </button>
+        <button type="button" class="work-card work-card-trigger" data-workflow="inbound-webhook">
+          <span class="work-tag">Workflow</span>
+          <h3>Inbound Webhook</h3>
         </button>
       </div>
     </div>
@@ -297,25 +301,9 @@
   <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="automation-modal-title">
     <button type="button" class="modal-close" id="automation-modal-close" aria-label="Close">&times;</button>
     <span class="work-tag">Sample Automation</span>
-    <h3 id="automation-modal-title">Appointment Confirmation + Reminder</h3>
-    <p>GoHighLevel automation that confirms a booked discovery call, then sends timed reminders leading up to it.</p>
-    <div class="wf-chain">
-      <div class="wf-node wf-trigger">Booked<br>Appointment</div>
-      <div class="wf-arrow"></div>
-      <div class="wf-node">Confirmation<br>Email</div>
-      <div class="wf-arrow"></div>
-      <div class="wf-node">Wait<br>24h</div>
-      <div class="wf-arrow"></div>
-      <div class="wf-node">Reminder<br>Email</div>
-      <div class="wf-arrow"></div>
-      <div class="wf-node">Wait<br>1h</div>
-      <div class="wf-arrow"></div>
-      <div class="wf-node">Reminder<br>Email</div>
-      <div class="wf-arrow"></div>
-      <div class="wf-node">Wait<br>5m</div>
-      <div class="wf-arrow"></div>
-      <div class="wf-node">Final<br>Reminder</div>
-    </div>
+    <h3 id="automation-modal-title"></h3>
+    <p id="automation-modal-desc"></p>
+    <div class="wf-chain" id="automation-modal-chain"></div>
   </div>
 </div>
 

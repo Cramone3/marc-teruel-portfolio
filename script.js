@@ -64,12 +64,55 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 
 // Automation workflow modal
 (function () {
-  const openBtn = document.getElementById("automation-modal-open");
+  const triggers = document.querySelectorAll(".work-card-trigger[data-workflow]");
   const closeBtn = document.getElementById("automation-modal-close");
   const modal = document.getElementById("automation-modal");
-  if (!openBtn || !modal) return;
+  const titleEl = document.getElementById("automation-modal-title");
+  const descEl = document.getElementById("automation-modal-desc");
+  const chainEl = document.getElementById("automation-modal-chain");
+  if (!triggers.length || !modal) return;
 
-  function openModal() {
+  const workflows = {
+    "appointment-reminder": {
+      title: "Appointment Confirmation + Reminder",
+      desc: "GoHighLevel automation that confirms a booked discovery call, then sends timed reminders leading up to it.",
+      steps: [
+        { label: "Booked<br>Appointment", type: "trigger" },
+        { label: "Confirmation<br>Email", type: "action" },
+        { label: "Wait<br>24h", type: "action" },
+        { label: "Reminder<br>Email", type: "action" },
+        { label: "Wait<br>1h", type: "action" },
+        { label: "Reminder<br>Email", type: "action" },
+        { label: "Wait<br>5m", type: "action" },
+        { label: "Final<br>Reminder", type: "action" },
+      ],
+    },
+    "inbound-webhook": {
+      title: "Inbound Webhook",
+      desc: "GoHighLevel automation that catches an inbound webhook, enriches the contact via Apollo, and tags it for routing.",
+      steps: [
+        { label: "Inbound<br>Webhook", type: "trigger" },
+        { label: "Get Contact<br>Details from Apollo", type: "action" },
+        { label: "Tag: apollo<br>inbound", type: "action" },
+      ],
+    },
+  };
+
+  function buildChainMarkup(steps) {
+    return steps
+      .map((step, i) => {
+        const node = `<div class="wf-node wf-${step.type}">${step.label}</div>`;
+        return i < steps.length - 1 ? node + '<div class="wf-arrow"></div>' : node;
+      })
+      .join("");
+  }
+
+  function openModal(key) {
+    const workflow = workflows[key];
+    if (!workflow) return;
+    titleEl.textContent = workflow.title;
+    descEl.textContent = workflow.desc;
+    chainEl.innerHTML = buildChainMarkup(workflow.steps);
     modal.hidden = false;
   }
 
@@ -77,7 +120,10 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     modal.hidden = true;
   }
 
-  openBtn.addEventListener("click", openModal);
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => openModal(trigger.dataset.workflow));
+  });
+
   closeBtn.addEventListener("click", closeModal);
 
   modal.addEventListener("click", (e) => {
