@@ -147,9 +147,9 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
         { label: "Email:<br>Just Checking In", type: "action" },
       ],
     },
-    "lead-scdc-1": {
-      title: "Lead SCDC (1 of 3) — Trigger & Patient Routing",
-      desc: "A larger dental-clinic (Smile and Co) lead workflow, split across 3 cards. Part 1: the form submission routes into a new-patient vs. existing-patient path, each notifying the team and sending a tailored welcome email.",
+    "lead-scdc": {
+      title: "Lead SCDC — Confirmation, Reminder & No-Show",
+      desc: "Dental-clinic (Smile and Co) lead workflow: routes new vs. existing patients, then runs an escalating appointment confirmation, reminder, and no-show follow-up cadence until the lead books or is removed.",
       steps: [
         { label: "Form<br>Submitted", type: "trigger" },
         { label: "Wait", type: "action" },
@@ -176,24 +176,15 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
             { label: "Welcome Back<br>Email", type: "action" },
           ],
         },
-      ],
-    },
-    "lead-scdc-2": {
-      title: "Lead SCDC (2 of 3) — Reminder Cadence",
-      desc: "Part 2: if the lead still hasn't booked, an escalating reminder cadence runs (identically for both the new- and existing-patient paths from Part 1) until they book or drop off.",
-      steps: [
-        { label: "Condition:<br>Booked a Schedule?", type: "action" },
-      ],
-      branches: [
         {
-          label: "1st Follow-up — Day 1",
+          label: "1st Reminder — Day 1",
           steps: [
             { label: "Wait<br>1 day", type: "action" },
             { label: "Email:<br>Reminder", type: "action" },
           ],
         },
         {
-          label: "2nd Follow-up — Day 4",
+          label: "2nd Reminder — Day 4",
           steps: [
             { label: "Wait<br>3 days", type: "action" },
             { label: "Wait<br>3 days", type: "action" },
@@ -201,22 +192,20 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
           ],
         },
         {
-          label: "3rd Follow-up — Day 11",
+          label: "3rd Reminder — Day 11",
           steps: [
             { label: "Wait<br>7 days", type: "action" },
             { label: "Email:<br>Reminder", type: "action" },
           ],
         },
-      ],
-    },
-    "lead-scdc-3": {
-      title: "Lead SCDC (3 of 3) — Final Follow-up",
-      desc: "Part 3: the last touch in the cadence — a final \"Last Chance\" email before the contact is removed from the workflow.",
-      steps: [
-        { label: "Condition:<br>Still Hasn't Booked?", type: "action" },
-        { label: "Email:<br>Last Chance — Free Smile Assessment", type: "action" },
-        { label: "Wait", type: "action" },
-        { label: "Remove from<br>Workflow", type: "action" },
+        {
+          label: "Final No-Show Follow-up",
+          steps: [
+            { label: "Email:<br>Last Chance — Free Smile Assessment", type: "action" },
+            { label: "Wait", type: "action" },
+            { label: "Remove from<br>Workflow", type: "action" },
+          ],
+        },
       ],
     },
   };
