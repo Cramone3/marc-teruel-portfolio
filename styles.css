@@ -226,6 +226,10 @@ a { color: inherit; text-decoration: none; }
   max-width: 70ch;
 }
 
+.lead + .lead {
+  margin-top: 16px;
+}
+
 /* Capabilities tags */
 .tag-grid {
   list-style: none;
