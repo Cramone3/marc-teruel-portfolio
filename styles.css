@@ -248,13 +248,37 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* Work tools */
+.tools-category {
+  margin-top: 48px;
+}
+
+.tools-category:first-of-type {
+  margin-top: 32px;
+}
+
+.tools-subhead {
+  font-size: 15px;
+  color: var(--orange);
+  margin-bottom: 16px;
+}
+
 .logo-grid {
   list-style: none;
-  margin: 40px 0 0;
+  margin: 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
+}
+
+.logo-grid.logo-grid-compact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.logo-grid.logo-grid-compact li {
+  flex: 0 0 190px;
 }
 
 .logo-grid li {
