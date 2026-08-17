@@ -148,7 +148,7 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
       ],
     },
     "lead-scdc": {
-      title: "Lead SCDC — Confirmation, Reminder & No-Show",
+      title: "Smile and Co. Confirmation, Reminder & No-Show",
       desc: "Dental-clinic (Smile and Co) lead workflow: routes new vs. existing patients, then runs an escalating appointment confirmation, reminder, and no-show follow-up cadence until the lead books or is removed.",
       steps: [
         { label: "Form<br>Submitted", type: "trigger" },
