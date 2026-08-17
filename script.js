@@ -137,6 +137,16 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
         },
       ],
     },
+    "no-show-nurture": {
+      title: "No-Show Nurture",
+      desc: "GoHighLevel automation that follows up after a missed appointment with a reschedule email, then checks in again a day later.",
+      steps: [
+        { label: "Appointment<br>Status", type: "trigger" },
+        { label: "Email:<br>Reschedule Follow-up", type: "action" },
+        { label: "Wait<br>1 day", type: "action" },
+        { label: "Email:<br>Just Checking In", type: "action" },
+      ],
+    },
   };
 
   function buildChainMarkup(steps) {
